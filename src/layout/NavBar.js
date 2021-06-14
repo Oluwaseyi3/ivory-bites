@@ -3,14 +3,13 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Fade from '@material-ui/core/Fade';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from "@material-ui/icons/Menu"
-import { Container, Paper, Grid, useMediaQuery, useTheme } from '@material-ui/core';
+import { Grid, useMediaQuery, useTheme } from '@material-ui/core';
 import { useHistory} from "react-router-dom"
 
 
@@ -48,6 +47,9 @@ export default function Navbar() {
     function menu() {
       history.push("/menu");
     }
+    function location() {
+      history.push("/location");
+    }
     // BreakPoints
     const theme = useTheme();
     const isMatch = useMediaQuery(theme.breakpoints.down("md"))
@@ -69,7 +71,7 @@ export default function Navbar() {
         <div>
 
      <div className={classes.root}>
-        <AppBar position="static" color="inherit" className={classes.appBar} elevation="disabled">
+        <AppBar position="static" color="inherit" className={classes.appBar} elevation="0">
             <Toolbar>
             {isMatch ?
               <Grid container direction="row-reverse" justify="flex-start" alignItems="baseline">
@@ -85,9 +87,10 @@ export default function Navbar() {
                   TransitionComponent={Fade}
                 >
                   <MenuItem onClick={home}>home</MenuItem>
-                  <MenuItem onClick={about}>About Us</MenuItem>
-                  <MenuItem onClick={Contact}>Contact Us</MenuItem>
                   <MenuItem onClick={menu}>Menu</MenuItem>
+                  <MenuItem onClick={Contact}>Contact Us</MenuItem>
+                  <MenuItem onClick={location}>Location</MenuItem>
+                  <MenuItem onClick={about}>About Us</MenuItem>
                 </Menu>
                
                 </Grid> 
@@ -96,6 +99,9 @@ export default function Navbar() {
             <Grid container direction="row-reverse" justify="flex-start" alignItems="baseline">
                <Button className={classes.title} onClick={about}>
                    About Us
+               </Button>
+               <Button className={classes.title} onClick={location}>
+                   Location
                </Button>
                <Button className={classes.title} onClick={Contact}>
                    Contact Us

@@ -2,7 +2,7 @@ import React from 'react'
 import ivoryb from "../layout/ivoryb.jpg"
 import MediaCard from "./Landing/MediaCard"
 import FAQ from "./Landing/FAQ.js"
-import {Button, Container, Grid, makeStyles, Paper, Typography, useTheme} from "@material-ui/core";
+import { Container, makeStyles, Paper, Typography} from "@material-ui/core";
 import Flip from 'react-reveal/Flip';
 import Slide from 'react-reveal/Slide'
 import Footer from "./Landing/Footer"
@@ -41,7 +41,7 @@ function Home() {
     return (
         <div>
         <Container>
-          <Paper className={classes.paperContainer}>
+          <Paper className={classes.paperContainer} elevation="disabled">
           <Flip left>
             <Typography variant="h4" className={classes.header}>Ivory Bites Restaurant and Bakery</Typography>
             </Flip>

@@ -1,12 +1,13 @@
 
 import './App.css';
-import {Switch, Route, Redirect, Router} from "react-router-dom"
+import {Switch, Route, Redirect} from "react-router-dom"
 import About from "./components/About"
 import Contact from "./components/Contact"
 import './index.css'
 import Home from "./components/Home"
 import NavBar from "./layout/NavBar.js"
-import MenuTable from "./components/MenuTable"
+import MenuTables from "./components/MenuTable"
+import Location from "./components/Location"
 import { createMuiTheme, ThemeProvider} from "@material-ui/core"
 
 const theme = createMuiTheme({
@@ -29,7 +30,8 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/Contact" component={Contact} />    
-      <Route exact path="/menu" component={MenuTable} />
+      <Route exact path="/menu" component={MenuTables} />
+      <Route exact path="/location" component={Location} />
       <Redirect to="/"/> 
       </Switch>  
       </ThemeProvider>

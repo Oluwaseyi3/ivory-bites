@@ -1,9 +1,8 @@
 import React from 'react'
 import {Typography, Container, Paper, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import ivorye from "../../layout/ivorye.jpg"
 import CopyrightIcon from '@material-ui/icons/Copyright';
-import {Link, useHistory} from "react-router-dom"
+import { useHistory} from "react-router-dom"
 
    
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
        copyRight: {
         marginTop: theme.spacing(15),
         [theme.breakpoints.down('md')]: {
-          marginTop: theme.spacing(8)
+          marginTop: theme.spacing(3)
         }
         },
         icon:{
@@ -35,9 +34,9 @@ export default function Footer() {
     const classes = useStyles();
     const history = useHistory();
 
-    function home() {
-      history.push("/");
-    }
+    // function home() {
+    //   history.push("/");
+    // }
     function about() {
       history.push("/about");
     }
@@ -55,36 +54,36 @@ export default function Footer() {
            <Paper className={classes.paperContainer}>
            <Grid container spacing={5}>
             <Grid item xs>
-                    <Typography variant="h8"> Company</Typography>
+                    <Typography variant="subtitle1"> Company</Typography>
             </Grid>
             <Grid item xs>
-                    <Typography variant="h8"> Resources</Typography>
+                    <Typography variant="subtitle2"> Resources</Typography>
             </Grid>
             <Grid item xs>
-                <Typography variant="h8"> Support</Typography>
+                <Typography variant="subtitle2"> Support</Typography>
             </Grid>
             
       </Grid>
       <Grid container spacing={5}>
            <Grid item xs>
-                 <Typography variant="h8" onClick={about}>About</Typography>
+                 <Typography variant="subtitle2" onClick={about}>About</Typography>
           </Grid>
           <Grid item xs>
-                <Typography variant="h8" onClick={menu}> Menu</Typography>
+                <Typography variant="subtitle2" onClick={menu}> Menu</Typography>
           </Grid>
          <Grid item xs>
-            <Typography variant="h8"> Email</Typography>
+            <Typography variant="subtitle2"> Email</Typography>
         </Grid>
       </Grid>
       <Grid container spacing={5}>
            <Grid item xs>
-                 <Typography variant="h8"> Contact </Typography>
+                 <Typography variant="subtitle2" onClick={Contact}> Contact </Typography>
           </Grid>
           <Grid item xs>
-                <Typography variant="h8"> FAQs</Typography>
+                <Typography variant="subtitle2"> FAQs</Typography>
           </Grid>
          <Grid item xs>
-            <Typography variant="h8"> Telephone</Typography>
+            <Typography variant="subtitle2"> Telephone</Typography>
         </Grid>
       </Grid>
                 <Grid

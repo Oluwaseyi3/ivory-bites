@@ -50,7 +50,7 @@ export default function Staff() {
              <Paper elevation="disabled">
              <Pulse>
              <Grid container spacing={3}>  <Grid item xs={12} sm={6}>
-             <img src={chef} className={classes.image}/>
+             <img src={chef} className={classes.image} alt="Chef"/>
              </Grid>
             <Grid item xs={12} sm={6} className={classes.text} >
             <Typography className={classes.textPadding} variant ="h4">Our People</Typography> 
